@@ -1,11 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Todo from './Todo';
 
-const TodoList = () => {
-  const todos = ['todo1', 'todo2', 'todo3'];
-  return (
-    todos.map(todo => <Todo text={todo} />)
-  );
-};
+const mapStateToProps = state => ({
+  todos: state.todos,
+});
 
-export default TodoList;
+const TodoList = ({ todos }) => (
+  todos.map(todo => <Todo text={todo} />)
+);
+
+export default connect(mapStateToProps)(TodoList);
