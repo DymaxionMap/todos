@@ -8,7 +8,6 @@ app.use(express.static(path.resolve(__dirname, '..', 'public')));
 app.use(bodyParser.json());
 
 app.get('/todos', (req, res) => {
-  console.log('got request', req);
   res.send(todos);
 });
 

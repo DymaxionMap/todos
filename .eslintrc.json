@@ -5,6 +5,7 @@
     "node": true
   },
   "rules": {
-    "no-shadow": 0
+    "no-shadow": 0,
+    "arrow-body-style": 0
   }
 }

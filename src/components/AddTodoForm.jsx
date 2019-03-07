@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addTodo } from '../actions';
-
-const mapDispatchToProps = dispatch => ({
-  addTodo: text => dispatch(addTodo(text)),
-});
 
 class AddTodoForm extends Component {
   constructor(props) {
@@ -43,4 +37,4 @@ AddTodoForm.propTypes = {
   addTodo: PropTypes.func.isRequired,
 };
 
-export default connect(null, mapDispatchToProps)(AddTodoForm);
+export default AddTodoForm;

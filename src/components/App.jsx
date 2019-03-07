@@ -1,29 +1,14 @@
-import React, { Fragment, useEffect } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import AddTodoForm from './AddTodoForm';
-import TodoList from './TodoList';
-import { fetchTodos } from '../actions';
+import React, { Fragment } from 'react';
+import AddTodoFormContainer from '../containers/AddTodoFormContainer';
+import TodoListContainer from '../containers/TodoListContainer';
 
-const mapDispatchToProps = dispatch => ({
-  fetchTodos: () => dispatch(fetchTodos()),
-});
-
-const App = ({ fetchTodos }) => {
-  useEffect(() => {
-    fetchTodos();
-  }, []);
-
+const App = () => {
   return (
     <Fragment>
-      <AddTodoForm />
-      <TodoList />
+      <AddTodoFormContainer />
+      <TodoListContainer />
     </Fragment>
   );
 };
 
-App.propTypes = {
-  fetchTodos: PropTypes.func.isRequired,
-};
-
-export default connect(null, mapDispatchToProps)(App);
+export default App;
